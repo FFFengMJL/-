@@ -31,7 +31,7 @@ title: 用乌龟git更加简单地clone作业仓库
 #### 下载乌龟git
 * 好的习惯：[百度](www.baidu.com)/[谷歌](www.google.com)搜索乌龟git
 
-*  不好的习惯：直接打开[Tortoise Git](https://tortoisegit.org/)，点击download，然后选择与自己电脑匹配的版本下载即可![TortoiseGit官网](https://wx2.sinaimg.cn/mw1024/007dfLy5ly1fvi6wzhahzj31gx0oj469.jpg)
+*  不好的习惯：直接点开[Tortoise Git](https://tortoisegit.org/)，点击download，然后选择与自己电脑匹配的版本下载即可![TortoiseGit官网](https://wx2.sinaimg.cn/mw1024/007dfLy5ly1fvi6wzhahzj31gx0oj469.jpg)
 
 #### 安装乌龟git
 
@@ -57,9 +57,9 @@ title: 用乌龟git更加简单地clone作业仓库
 
 2. 在你的桌面**鼠标右键**,找到`Git 克隆`。![鼠标右键](https://wx3.sinaimg.cn/mw1024/007dfLy5ly1fvi4mvetrij30dc0httea.jpg)
 
->* 如果没有找到，可以**shift+鼠标右键**再试试。
+*   如果没有找到，可以**shift+鼠标右键**再试试。
 
->* 如果上述操作还是找不到，那么 **右键**>>**Tortoise**>>**设置**>>左侧选择**右键菜单**,勾选`克隆`，并重复上一个步骤。
+*   如果上述操作还是找不到，那么 **右键**>>**Tortoise**>>**设置**>>左侧选择**右键菜单**,勾选`克隆`，并重复上一个步骤。
 
 3. 把你复制的网址黏贴在`URL`栏，选择好你想克隆到的文件夹，**确定**就好。![](https://wx4.sinaimg.cn/mw1024/007dfLy5ly1fvi4mut5zyj30k00eq3yt.jpg)
 
