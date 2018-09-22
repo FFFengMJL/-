@@ -56,6 +56,7 @@ title: 用乌龟git更加简单地clone作业仓库
 1. 复制你的`homework`仓库的网址。![复制网址](https://wx4.sinaimg.cn/mw1024/007dfLy5ly1fvi86wzti0j30zf0p1770.jpg)
 
 2. 在你的桌面**鼠标右键**,找到`Git 克隆`。![鼠标右键](https://wx3.sinaimg.cn/mw1024/007dfLy5ly1fvi4mvetrij30dc0httea.jpg)
+
 >* 如果没有找到，可以**shift+鼠标右键**再试试。
 
 >* 如果上述操作还是找不到，那么 **右键**>>**Tortoise**>>**设置**>>左侧选择**右键菜单**,勾选`克隆`，并重复上一个步骤。
