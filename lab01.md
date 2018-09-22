@@ -5,7 +5,7 @@ title: 用乌龟git更加简单地clone作业仓库
 
 # 用乌龟git更加简单地clone作业仓库
 
->前言：由于按照[学校给的教程](https://sysu-swi.github.io/homework-start)在本地clone代码仓库需要打开git bash的类似cmd的界面（这界面还`不能ctrl+v`），并且步骤**感觉**过于麻烦。而我是在室友dalao的帮助下（其实是并没有看到教程(°ー°〃)）通过`乌龟git`进行了同样的设置，并且感觉更加方便快捷易读，所以描述一下相关操作，希望能够帮到读者。  
+>前言：由于按照[学校给的教程](https://sysu-swi.github.io/homework-start)在本地clone代码仓库需要打开git bash的类似cmd的界面（这界面还`不能ctrl+v`），并且步骤**感觉**过于麻烦。而我是在室友dalao的帮助下（其实是并没有看到教程(°ー°〃)）通过`乌龟git`进行了同样的设置，并且感觉更加方便快捷易懂，所以描述一下相关操作，希望能够帮到读者。  
 
 ## 步骤  
 1.  注册github账号
