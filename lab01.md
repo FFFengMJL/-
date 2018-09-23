@@ -29,7 +29,7 @@ title: 用乌龟git更加简单地clone作业仓库
 ### 4.下载并安装乌龟git
 
 #### 下载乌龟git
-* 好的习惯：<a herf="www.baidu.com" target="_blank">百度</a>/<a herf="www.google.com" target="_blank">谷歌</a>搜索乌龟git
+* 好的习惯：<a herf="//www.baidu.com" target="_blank">百度</a>/<a herf="//www.google.com" target="_blank">谷歌</a>搜索乌龟git
 
 *  不好的习惯：直接点开<a herf="https://tortoisegit.org/" target="_blank">Tortoise Git</a>，点击download，然后选择与自己电脑匹配的版本下载即可![TortoiseGit官网](https://wx2.sinaimg.cn/mw1024/007dfLy5ly1fvi6wzhahzj31gx0oj469.jpg)
 
