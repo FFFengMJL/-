@@ -5,7 +5,7 @@ title: 用乌龟git更加简单地clone作业仓库
 
 # 用乌龟git更加简单地clone作业仓库
 
->前言：由于按照<a herf="https://sysu-swi.github.io/homework-start" target="_blank">学校给的教程</a>在本地clone代码仓库需要打开git bash的类似cmd的界面（这界面还`不能ctrl+v`），并且步骤**感觉**过于麻烦。而我是在室友dalao的帮助下（其实是并没有看到教程(°ー°〃)）通过`乌龟git`进行了同样的设置，并且感觉更加方便快捷易懂，所以描述一下相关操作，希望能够帮到读者。  
+>前言：由于按照<a href="https://sysu-swi.github.io/homework-start" target="_blank">学校给的教程</a>在本地clone代码仓库需要打开git bash的类似cmd的界面（这界面还`不能ctrl+v`），并且步骤**感觉**过于麻烦。而我是在室友dalao的帮助下（其实是并没有看到教程(°ー°〃)）通过`乌龟git`进行了同样的设置，并且感觉更加方便快捷易懂，所以描述一下相关操作，希望能够帮到读者。  
 
 ## 步骤  
 1.  注册github账号
@@ -22,16 +22,16 @@ title: 用乌龟git更加简单地clone作业仓库
 
 ### 步骤1~3
 
->可直接参考学校教程 <a herf="https://sysu-swi.github.io/homework-start" target="_blank">使用Git提交作业</a>
+>可直接参考学校教程 <a href="https://sysu-swi.github.io/homework-start" target="_blank">使用Git提交作业</a>
 
 ![软工导论支持网站](https://wx2.sinaimg.cn/mw1024/007dfLy5ly1fvi4muu1npj30r30aydh8.jpg)
 
 ### 4.下载并安装乌龟git
 
 #### 下载乌龟git
-* 好的习惯：<a herf="//www.baidu.com" target="_blank">百度</a>/<a herf="//www.google.com" target="_blank">谷歌</a>搜索乌龟git
+* 好的习惯：<a href="//www.baidu.com" target="_blank">百度</a>/<a href="//www.google.com" target="_blank">谷歌</a>搜索乌龟git
 
-*  不好的习惯：直接点开<a herf="https://tortoisegit.org/" target="_blank">Tortoise Git</a>，点击download，然后选择与自己电脑匹配的版本下载即可![TortoiseGit官网](https://wx2.sinaimg.cn/mw1024/007dfLy5ly1fvi6wzhahzj31gx0oj469.jpg)
+*  不好的习惯：直接点开<a href="https://tortoisegit.org/" target="_blank">Tortoise Git</a>，点击download，然后选择与自己电脑匹配的版本下载即可![TortoiseGit官网](https://wx2.sinaimg.cn/mw1024/007dfLy5ly1fvi6wzhahzj31gx0oj469.jpg)
 
 #### 安装乌龟git
 
@@ -47,7 +47,7 @@ title: 用乌龟git更加简单地clone作业仓库
 
 1.  登陆你的github
 
-2.  点开<a herf="https://github.com/sysu-swi/homework" target="_blank">https://github.com/sysu-swi/homework</a>
+2.  点开<a href="https://github.com/sysu-swi/homework" target="_blank">https://github.com/sysu-swi/homework</a>
 
 3.  看到那个红圈里面的**fork**了么，点击它！然后就会跳转并发现了属于自己的`homework`仓库了！![fork](https://wx4.sinaimg.cn/mw1024/007dfLy5ly1fvi80r4x9yj31go0p3ack.jpg)
 
@@ -68,7 +68,7 @@ title: 用乌龟git更加简单地clone作业仓库
 
 5. 大功告成！╰(￣ω￣ｏ)
 
->后面的步骤继续参考学校教程 <a herf="https://sysu-swi.github.io/homework-start" target="_blank">使用Git提交作业]</a>就好。
+>后面的步骤继续参考学校教程 <a href="https://sysu-swi.github.io/homework-start" target="_blank">使用Git提交作业]</a>就好。
 
 <!--## 1、你会使用 vscode 编辑 markdown 了吗？
 
