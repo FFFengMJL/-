@@ -104,7 +104,7 @@ title: 用乌龟git更加简单地clone作业仓库
 
 5. 大功告成！╰(￣ω￣ｏ)
 
->后面的步骤继续参考学校教程 <a href="https://sysu-swi.github.io/homework-start" target="_blank">使用Git提交作业]</a>就好。
+>后面的步骤继续参考学校教程 <a href="https://sysu-swi.github.io/homework-start" target="_blank">使用Git提交作业</a>就好。
 
 <!--## 1、你会使用 vscode 编辑 markdown 了吗？
 
