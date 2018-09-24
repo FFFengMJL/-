@@ -1,4 +1,4 @@
-# 【学号】的软导作业索引页
+# 【18342075】的软导作业索引页
 
 ## 课后作业
 
@@ -10,7 +10,7 @@
 
 ## 实验与实践
 
-1. [01-我的 Markdown 博客](lab01)
+1. <a href="/homework/lab01" target="_blank">01-用乌龟git更加简单地clone代码仓库</a>
 2. [02-制作 HTML5 游戏](lab02)
 3. [03-我喜欢的...-...](lab03)
 4. [04-我的科普博客](lab04)
@@ -28,9 +28,9 @@
 16. [16-互联网时代的盈利模式](lab16)
 
 
-## Markdown 语法演示
+<!--## Markdown 语法演示
 
-![](images/exclamation.png) 语法 [demo 文档](demo)， [source](https://github.com/sysu-swi/homework/blob/gh-pages/demo.md)
+![](images/exclamation.png) 语法 [demo 文档](demo)， [source](https://github.com/sysu-swi/homework/blob/gh-pages/demo.md)-->
 
 
 
