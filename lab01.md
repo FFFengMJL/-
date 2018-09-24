@@ -5,7 +5,7 @@ title: 用乌龟git更加简单地clone作业仓库
 
 # 用乌龟git更加简单地clone作业仓库
 
->前言：由于按照<a href="https://sysu-swi.github.io/homework-start" target="_blank">学校给的教程</a>在本地clone代码仓库需要打开git bash的类似cmd的界面（这界面还`不能ctrl+v`），并且步骤**感觉**过于麻烦。而我是在室友dalao的帮助下（其实是并没有看到教程(°ー°〃)）通过`乌龟git`进行了同样的设置，并且感觉更加方便快捷易懂，所以描述一下相关操作，希望能够帮到读者。 
+>前言：由于按照<a href="https://sysu-swi.github.io/homework-start" target="_blank">学校给的教程</a>在本地clone代码仓库需要打开git bash的类似cmd的界面（这界面还`不能ctrl+v`），并且步骤**感觉**过于麻烦。而我是在室友dalao的帮助下（其实是并没有看到教程(°ー°〃)）通过**乌龟git**进行了同样的设置，并且感觉更加方便快捷易懂，所以描述一下相关操作，希望能够帮到读者。 
 ![软工导论支持网站](https://wx2.sinaimg.cn/mw1024/007dfLy5ly1fvi4muu1npj30r30aydh8.jpg) 
 
 ## 步骤  
@@ -56,7 +56,7 @@ title: 用乌龟git更加简单地clone作业仓库
 >
 >2. 下载完成后，看到了那个蓝色的**Reload**么，点击它。
 >
->3. 使用`ctrl+shift+p`，搜索**Configure Display Language**并点开它![](https://wx3.sinaimg.cn/mw1024/007dfLy5ly1fvkhjvg2dij30p50dgmyv.jpg)并将文件中的**en**改成**zh-CN**![](https://wx3.sinaimg.cn/mw1024/007dfLy5ly1fvkhomz4pnj30pn0djt9h.jpg)保存文件并重启vscode即可看到了中文界面的vscode了。o(*￣▽￣*)ブ
+>3. 使用`ctrl+shift+p`，搜索**Configure Display Language**并点开它![](https://wx3.sinaimg.cn/mw1024/007dfLy5ly1fvkhjvg2dij30p50dgmyv.jpg)将文件中的**en**改成**zh-CN**![](https://wx3.sinaimg.cn/mw1024/007dfLy5ly1fvkhomz4pnj30pn0djt9h.jpg)保存文件并重启vscode即可看到了中文界面的vscode了。o(*￣▽￣*)ブ
 
 ### 3.下载并安装git
 
@@ -65,13 +65,13 @@ title: 用乌龟git更加简单地clone作业仓库
 ### 4.下载并安装乌龟git
 
 #### 下载乌龟git
-* 好的习惯：<a href="//www.baidu.com" target="_blank">百度</a>/<a href="//www.google.com" target="_blank">谷歌</a>搜索乌龟git
+* 好的习惯：<a href="//www.baidu.com" target="_blank">百度</a>/<a href="//www.google.com" target="_blank">谷歌</a>搜索乌龟git。
 
-*  不那么好的习惯：直接点开<a href="https://tortoisegit.org/" target="_blank">Tortoise Git</a>，点击download，然后选择与自己电脑匹配的版本下载即可![TortoiseGit官网](https://wx2.sinaimg.cn/mw1024/007dfLy5ly1fvi6wzhahzj31gx0oj469.jpg)
+*  不那么好的习惯：直接点开<a href="https://tortoisegit.org/" target="_blank">Tortoise Git</a>，点击download，然后选择与自己电脑匹配的版本下载。![TortoiseGit官网](https://wx2.sinaimg.cn/mw1024/007dfLy5ly1fvi6wzhahzj31gx0oj469.jpg)
 
 #### 安装乌龟git
 
-点开安装包，一路**next**，可以在安装路径那里调整一下
+点开安装包，一路**next**，可以在安装路径那里调整一下。
 
 >安装完启动了乌龟git之后，会有语言选择项，但是我们会发现只有**english**是可选的，如果想要**中文**：
 
