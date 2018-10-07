@@ -6,17 +6,19 @@ title: 完成Beginner's guide to Construct 2
 # 完成Beginner's guide to Construt 2
 
 目录
-* 安装Construct 2
+* <a href="#c1">安装Construct 2</a>
 
-* 新建项目
+* <a href="#c2">新建项目</a>
 
-* 导入素材（背景，对象等）
+* <a href="#c3">导入素材（背景，对象等）</a>
 
-* 行为、事件及<!--大体完成 -->
+* <a href="#c4">行为、事件及</a><!--大体完成 -->
 
-* 其他优化
+* <a href="#c5">其他优化</a>
 
-## 安装Construct 2
+* <a href="#c6">实例演示</a>
+
+## <a name="#c1">安装Construct 2</a>
 
 1. 下载：进入<a href="https://www.scirra.com/construct2" target="_blank">Construct 2官网</a>，点击`download`（Construct2并不需要购买，免费版本就够用了）并等待下载结束即可。
 
@@ -24,7 +26,7 @@ title: 完成Beginner's guide to Construct 2
 
 2. 安装：除了安装位置，都可以无脑`下一步`。
 
-## 新建项目
+## <a name="#c2">新建项目</a>
 
 <img src="images/lab02/construct2 UI.png">
 
@@ -42,7 +44,7 @@ title: 完成Beginner's guide to Construct 2
 3. 在*Properties Bar*中调整*layout Size*（整个地图的大小）的大小为**1280*1024**，*Margins*（镜头的大小）调整为**500*500**（如下图）。  
 <img src="images/lab02/bgsize.png">
 
-## 导入素材（背景、对象等）
+## <a name="#c3">导入素材（背景、对象等）</a>
 
 1. 导入背景：鼠标`双击`中间的白色区域（或者`右键`-->`Insert new object`），弹出窗口后在*General*选项中双击`Tiled Background`。  
 <img src="images/lab02/tiledbg.png">
@@ -73,7 +75,7 @@ title: 完成Beginner's guide to Construct 2
 >2. 点击，在*image point*中新添加一个点，设置为*shoot*，后面会将其设置为子弹射出的**初始位置**（这样会使动画效果看上去更加真实）。
 ><img src="images/lab02/point.png">
 
-## 添加行为、事件及动作
+## <a name="#c4">添加行为、事件及动作</a>
 
 >在添加上述之前，我们注意到，该游戏是需要对*Player*进行操控的，那么，就需要双击层，在*input*项选择并添加**Mouse**和**Keyboard**，这样我们就可以在后续游戏成品中通过鼠标和键盘的输入控制*Player*了
 
@@ -117,7 +119,7 @@ title: 完成Beginner's guide to Construct 2
 这时候，我们的游戏就可以开始运行游玩了。
 
 
-## 其他优化
+## <a name="#c5">其他优化</a>
 
 1. 不能**使用键盘WASD进行移动**？  
 >对于许多小伙伴来说，方向键并不是常用的移动键，这时候就需要将WASD加入输入了，具体命令如下：  
@@ -139,6 +141,6 @@ title: 完成Beginner's guide to Construct 2
 ><img src="images/lab02/toward.png">  
 >注意：在选择判断距离时，选择`Compare two values`（比较两个值）
 
-## 实例演示
+## <a name="#c6">实例演示</a>
 
 <img src="images/lab02/finish.gif">
