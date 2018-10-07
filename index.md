@@ -11,7 +11,7 @@
 ## 实验与实践
 
 1. <a href="/homework/lab01" target="_blank">01-用乌龟git更加简单地clone代码仓库</a>
-2. [02-制作 HTML5 游戏](lab02)
+2. [02-完成Construct2新手guide](lab02)
 3. [03-我喜欢的波兰蠢驴——CDPR](lab03)
 4. [04-我的科普博客](lab04)
 5. [05-电路学习](lab05)
