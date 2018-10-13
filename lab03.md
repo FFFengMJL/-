@@ -48,25 +48,25 @@ title:  波兰蠢驴——CD Project（Red）
 
 3. 艰难开发：在对分销的热情退却后，两位创始者将自己的目光对准了游戏开发上来，他们购买了著名小说——**安德烈·斯帕克沃斯基（Andrzej Sapkowski）**的《猎魔人》，并且成立了现在广为人知的CD Project RED（后简称`CDPR`）。但是没有任何开发经验的经历了一系列失败之后，终于在耗时五年的研发以及B社**Bioware**的大力支持下，拿出了一个收获了积极评价的*The Witcher*（中文译名《巫师》）。但是由于主机版本项目的取消以及经融危机的到来，公司濒临破产。
 
-<img src="images/lab03/The Witcher logo.png" alt="steam上的《巫师》简介">
+![steam上的《巫师》简介](images/lab03/The%20Witcher%20logo.png)
 
 4. 扬名启航：遭遇了重大打击，为了维持公司的持续，CDPR开始专心打造用于《巫师》后作的引擎`REDengine`，并且在经历了三年半的研发之后，*The Witcher 2:Assassins of Kings*（中文译名《巫师2：国王刺客》）于2011年发售，同时收获了大量好评和销量（170万份）。
 
-<img src="images/lab03/The Witcher2 logo.png" alt="steam上的《巫师2》">
+![steam上的《巫师2》](images/lab03/The%20Witcher2%20logo.png)
 
 5. 名声大噪：《巫师2》的成功带给CDPR的各位更大的动力，他们想要给《巫师》的下一作一个自由的开放世界，想要画质更加精良，内容更加丰富。于是，又是同样的三年半，*The Witcher 3:Wild Hunt*（中文译名《巫师3：狂猎》）发售了。凭借着丰富的游戏内容，优秀的画面，引人深思的任务选择，大量的免费拓展包等诸多令玩家大呼“良心”的特点，《巫师3》名副其实地拿到了2015年的**年度最佳RPG**奖，并且，又随着大型拓展包《血与酒》的发售，该游戏又荣获2016年的**年度最佳RPG**奖。这也让CDP(R)“波兰蠢驴”的帽子坐实了。（笔者：一个RPG连续两年获得年度最佳也是没谁了）
 
-<img src="images/lab03/The Witcher3 logo.png">
+![](images/lab03/The%20Witcher3%20logo.png)
 
 ## <a name="#3">重要作品</a>
 
 1. *<a href="https://thewitcher.com/en/witcher3/" target="_blank">The Witcher 3:Wild Hunt</a>*《巫师3：狂猎》
 
-<img src="images/lab03/The Witcher3.png" alt="steam商店页面的《巫师3》">
+![steam商店页面的《巫师3》](images/lab03/The%20Witcher3.png)
 
 2. *<a href="https://www.cyberpunk.net/zh-cn/" target="_blank">CyberPunk 2077</a>*《赛博朋克2077》（未发售）
 
-<img src="images/lab03/cyberpunk2077.png" alt="蠢驴官网的《赛博朋克2077》">
+![蠢驴官网的《赛博朋克2077》](images/lab03/cyberpunk2077.png)
 
 ## <a name="c4">“清流”之意</a>
 
@@ -78,7 +78,7 @@ title:  波兰蠢驴——CD Project（Red）
 >
 >2. **认为*DLC*（可下载内容，Downloadable Content，简称DLC，又称追加下载内容）免费**。他们认为DLC免费应该成为行业标准，并且“制作一个一个DLC其实并不需要太多的资源”，而《巫师3：狂猎》中的15个免费DLC便是最好的例证。（笔者：没错，说的就是你，EA）
 >
-><img src="images/lab03/The Witcher3 DLC.png">
+>![](images/lab03/The%20Witcher3%20DLC.png)
 >3. **用心做游戏，用脚卖游戏**。这当然是一句玩笑话。《巫师3：狂猎》中唯二收费的剧情拓展包《石之心》与《血与酒》内容十分丰富，剧情长度堪比游戏本体，尤其是《血与酒》被玩家们戏称为《巫师4》，“波兰蠢驴把《巫师4》当作DLC卖”也是玩家们的一句赞美。而且，在steam与他们自己的GOG平台上，《巫师》系列动不动就50%off，这怎么不吸引玩家们入正（剁手）呢。
 
 ## <a name="c5">近日事件</a>

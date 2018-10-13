@@ -2,18 +2,18 @@
 
 ## 课后作业
 
-1. [01-使用维基百科（Wikipedia）解释名词](hw01)
-2. [02-进制转换](hw02)
-3. [03-溢出、精度与误差](hw03)
-4. [04-颜色与编码](hw04)
+1. <a href="hw01" target="_blank">01-使用维基百科（Wikipedia）解释名词</a>
+2. <a href="hw02" target="_blank">02-进制转换</a>
+3. <a href="hw03" target="_blank">03-溢出、精度与误差</a>
+4. <a href="hw04" target="_blank">04-颜色与编码</a>
 
 
 ## 实验与实践
 
-1. <a href="/homework/lab01" target="_blank">01-用乌龟git更加简单地clone代码仓库</a>
-2. [02-完成Construct2新手guide](lab02)
-3. [03-我喜欢的波兰蠢驴——CDPR](lab03)
-4. [04-我的科普博客](lab04)
+1. <a href="lab01" target="_blank">01-用乌龟git更加简单地clone代码仓库</a>
+2. <a href="lab02" target="_blank">02-完成Construct2新手guide</a>
+3. <a href="lab03" target="_blank">03-我喜欢的波兰蠢驴——CDPR</a>
+4. <a href="lab04" target="_blank">04-什么是奇偶校验</a>
 5. [05-电路学习](lab05)
 6. [06-X现象背后的IT规律](lab06)
 7. [07-机器语言实验报告](lab07)
