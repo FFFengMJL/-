@@ -6,7 +6,7 @@
 2. <a href="hw02" target="_blank">02-进制转换</a>
 3. <a href="hw03" target="_blank">03-溢出、精度与误差</a>
 4. <a href="hw04" target="_blank">04-颜色与编码</a>
-
+5. <a href="hw05" target="_blank">05-门电路</a>
 
 ## 实验与实践
 
