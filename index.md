@@ -7,7 +7,7 @@
 3. <a href="hw03" target="_blank">03-溢出、精度与误差</a>
 4. <a href="hw04" target="_blank">04-颜色与编码</a>
 5. <a href="hw05" target="_blank">05-门电路</a>
-
+6. <a href="hw06" target="_blank">06-计算机硬件</a>
 ## 实验与实践
 
 1. <a href="lab01" target="_blank">01-用乌龟git更加简单地clone代码仓库</a>
