@@ -19,8 +19,8 @@ title: 实验报告
 
 > *ACC* (**Acc**umulator register): In a computer's central processing unit (CPU), an accumulator is a register in which intermediate arithmetic and logic results are stored.
 
-{:start="3"}
-* 3. 用“LOD #3”指令的执行过程，解释Fetch-Execute周期。
+
+* {:start="3"}3. 用“LOD #3”指令的执行过程，解释Fetch-Execute周期。
 
 ![](/images/lab07/program1%20LOD123.png)
 
@@ -30,15 +30,18 @@ title: 实验报告
 
 ![](/images/lab07/program1%20LOD4.png)
 
+{:start="4"}
 >   4. Decoder将*Instruction Specifier*传入ALU，并将*Operand specificer*传入MUX
 
 ![](/images/lab07/program1%20LOD56.png)
 
+{:start="5"}
 >   5. ALU将加法运算载入
 >   6. ALU左侧载入0，右侧读入MUX中的数字3，并进行运算
 
 ![](images/lab07/program1%20LOD78.png)
 
+{:start="7"}
 >   7. 将结果储存在ACC
 >   8. PC中的地址+2
 
@@ -53,15 +56,18 @@ title: 实验报告
 
 ![](/images/lab07/program1%20ADDW4.png)
 
+{:start="4"}
 >   4. Decoder将*Instruction Specifier*传入ALU，并将*Operand specificer*传入MUX
 
 ![](/images/lab07/program1%20ADDW56.png)
 
+{:start="5"}
 >   5. ALU载入加法，MUX读取地址W中的数据
 >   6. ALU左侧载入ACC中寄存的数据，右侧载入MUX中的数据，进行运算
 
 ![](/images/lab07/program1%20ADDW78.png)
 
+{:start="7"}
 >   7. 将结果储存在ACC
 >   8. PC中的地址+2
 
