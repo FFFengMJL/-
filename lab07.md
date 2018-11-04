@@ -117,19 +117,15 @@ int main(){
 
 1. 写出 c 语言的计算过程
 
-```
-#include<stdio.h>  
-  
-int main(){  
-    int X=0;  
-    int Y=10;  
-    X+=Y  
+```   
+int X=0;  
+int Y=10;  
+X+=Y  
+Y-=1;  
+while(Y != 0){  
+    X+=Y;  
     Y-=1;  
-    while(Y != 0){  
-        X+=Y;  
-        Y-=1;  
-    }  
-}  
+    }
 ```
 
 2. 写出机器语言的计算过程
@@ -145,7 +141,7 @@ int main(){
 14  STO Y  
 16  CPZ Y  
 18  JMZ 4  
-20  HLT  
+20  HLT
 ```
 
 3. 用自己的语言，简单总结高级语言与机器语言的区别与联系。
