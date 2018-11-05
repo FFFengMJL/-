@@ -74,7 +74,7 @@ title: 实验报告
 
 1. 写出指令 “LOD #7” 的二进制形式，按指令结构，解释每部分的含义。
 
-> **000010100 00000111**
+> **00010100 00000111**
 > 
 > The former 8 bits are *Instruction Specifier* —— LOD, which means "Load the data to the register"; the later 8 bits are *Operand Specifier*, which is the data "7".
 
@@ -114,13 +114,13 @@ while(X != 0){
 1. 写出 c 语言的计算过程
 
 ```
-int X=0;  
-int Y=10;  
-X+=Y;  
-Y-=1;  
-while(Y != 0){  
-    X+=Y;  
-    Y-=1;  
+int Y=0;  
+int x=10;  
+Y+=X;  
+X-=1;  
+while(X != 0){  
+    Y+=X;  
+    X-=1;  
 }
 ```
 
@@ -128,14 +128,14 @@ while(Y != 0){
 
 ```
 0   LOD #10  
-2   STO Y  
-4   LOD Y  
-6   ADD X  
-8   STO X  
-10  LOD Y  
+2   STO X  
+4   LOD X  
+6   ADD Y  
+8   STO Y  
+10  LOD X  
 12  SUB #1  
-14  STO Y  
-16  CPZ Y  
+14  STO X  
+16  CPZ X  
 18  JMZ 4  
 20  HLT
 ```
