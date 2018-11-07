@@ -21,7 +21,7 @@ title: 用乌龟git更加简单地clone代码仓库
 
 6.  <a href="#6">clone仓库</a>
 
-### 1.<a name="1">注册github账号</a>
+## 1.<a name="1">注册github账号</a>
 
 * 好的习惯：<a href="//www.baidu.com" target="_blank">百度</a>/<a href="//www.google.com" target="_blank">谷歌</a>搜索github
 
@@ -32,7 +32,7 @@ title: 用乌龟git更加简单地clone代码仓库
 >这是一个境外网站，打开速度慢是正常的。  
 卡spinner的小伙伴们可以考虑弄个梯子。
 
-### 2.<a name="2">下载并安装Visual Studio Code</a>
+## 2.<a name="2">下载并安装Visual Studio Code</a>
 
 #### 1.下载vscode
 
@@ -58,11 +58,11 @@ title: 用乌龟git更加简单地clone代码仓库
 >
 >3. 使用`ctrl+shift+p`，搜索**Configure Display Language**并点开它![](https://wx3.sinaimg.cn/mw1024/007dfLy5ly1fvkhjvg2dij30p50dgmyv.jpg)将文件中的**en**改成**zh-CN**![](https://wx3.sinaimg.cn/mw1024/007dfLy5ly1fvkhomz4pnj30pn0djt9h.jpg)保存文件并重启vscode即可看到了中文界面的vscode了。o(*￣▽￣*)ブ
 
-### 3.<a name="3">下载并安装git</a>
+## 3.<a name="3">下载并安装git</a>
 
 从<a href="https://git-scm.com/downloads" target="_blank">git工具官网</a>下载对应自己电脑系统的版本，安装即可。![](https://sysu-swi.github.io/images/homework-helper/git-download.png)
 
-### 4.<a name="4">下载并安装乌龟git</a>
+## 4.<a name="4">下载并安装乌龟git</a>
 
 #### 下载乌龟git
 * 好的习惯：<a href="//www.baidu.com" target="_blank">百度</a>/<a href="//www.google.com" target="_blank">谷歌</a>搜索乌龟git。
@@ -79,7 +79,7 @@ title: 用乌龟git更加简单地clone代码仓库
 
 2.  回到乌龟git，点击`refresh`，就能找到中文啦。
 
-### 5.<a name="5">fork 代码仓库</a>
+## 5.<a name="5">fork 代码仓库</a>
 
 1.  登陆你的github
 
@@ -87,7 +87,7 @@ title: 用乌龟git更加简单地clone代码仓库
 
 3.  看到那个红圈里面的**fork**了么，点击它！然后就会跳转并发现了属于自己的**homework**仓库了！![fork](https://wx4.sinaimg.cn/mw1024/007dfLy5ly1fvi80r4x9yj31go0p3ack.jpg)
 
-### 6.<a name="6">clone仓库</a>
+## 6.<a name="6">clone仓库</a>
 
 1. 复制你的**homework**仓库的网址。![复制网址](https://wx4.sinaimg.cn/mw1024/007dfLy5ly1fvi86wzti0j30zf0p1770.jpg)
 
