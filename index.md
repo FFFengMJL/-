@@ -10,6 +10,7 @@
 6. <a href="hw06">06-计算机硬件</a>
 7. <a href="hw07">07-机器编码</a>
 8. <a href="hw08">08-Top-down设计与洗衣机</a>
+9. <a href="hw09">09-类与对象</a>
 ## 实验与实践
 
 1. <a href="lab01" >01-用乌龟git更加简单地clone代码仓库</a>
