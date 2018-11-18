@@ -17,10 +17,10 @@ title: 使用 pyhon 求解
 
 ### 1. What is the RANK of the space spanned by the given vector.
 
-$$ \vec{a} $$ = $ \begin{bmatrix} 1 \\ -3 \\ 2 \\ -4 \\ \end{bmatrix} $
-$$ \vec{b} $$ = $ \begin{bmatrix} -3 \\ 9 \\ -6 \\ 12 \\ \end{bmatrix} $
-$$ \vec{c} $$ = $ \begin{bmatrix} 2 \\ -1 \\ 4 \\ 2 \\ \end{bmatrix} $
-$$ \vec{d} $$ = $ \begin{bmatrix} -4 \\ 5 \\ -3 \\ 7 \\ \end{bmatrix} $
+$$ \vec{a} $$ = $ \begin{bmatrix} 1 -3 2 -4 \end{bmatrix} $  
+$$ \vec{b} $$ = $ \begin{bmatrix} -3 \\ 9 \\ -6 \\ 12 \\ \end{bmatrix} $  
+$$ \vec{c} $$ = $ \begin{bmatrix} 2 \\ -1 \\ 4 \\ 2 \\ \end{bmatrix} $  
+$$ \vec{d} $$ = $ \begin{bmatrix} -4 \\ 5 \\ -3 \\ 7 \\ \end{bmatrix} $  
 
 1. 加载库  
 ![](images/lab10/loadmodule.png)
