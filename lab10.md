@@ -11,9 +11,9 @@ title: 使用 pyhon 求解
 
 2. <a href="#linalg">使用 Python 求解线性代数</a>
 
-## <a name="math">高等数学</a>
+## <a name="math">使用 Python 求解高等数学</a>
 
-### 1. 求 $ (x^{3} \dot \cos x)^{10} $
+### 1. 求 $ (x^{3} \dot \cos x)^{(10)} $
 
 1. 加载库  
 ![load sympy](images/lab10/loadsympy.png)
@@ -27,10 +27,13 @@ title: 使用 pyhon 求解
 4. 求该式的导数  
 ![compute 1 time](images/lab10/compute1time.png)
 
+5. 多次求导  
+![compute 10 times](images/lab10/compute10times.png)
+
 ### 2. 求上述函数在区间[0,1]的积分
 
 1. 使用函数 integrate() 进行积分  
-![integrade](images/lab10/integratd.png)
+![integrade](images/lab10/integrate.png)
 
 ## <a name="linalg">使用 python 求解线性代数</a>
 
