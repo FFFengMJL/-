@@ -15,16 +15,12 @@ title: 使用 pyhon 求解
 
 ## <a name="linalg">使用 python 求解线性代数</a>
 
-### 1. What is the RANK of the given matrix
+### 1. What is the RANK of the given vectors
 
-$$ \vec{a} $$ = $ \begin{bmatrix} 1 \\
- -3 \\
-  2 \\
- -4 \\
-  \end{bmatrix} $  
-$$ \vec{b} $$ = $$ \begin{bmatrix} -3 \\ 9 \\ -6 \\ 12 \\ \end{bmatrix} $$  
-$$ \vec{c} $$ = $ \begin{bmatrix} 2 \\ -1 \\ 4 \\ 2 \\ \end{bmatrix} $  
-$$ \vec{d} $$ = $ \begin{bmatrix} -4 \\ 5 \\ -3 \\ 7 \\ \end{bmatrix} $  
+$$ \vec{a} = \begin{bmatrix} 1 \\ -3 \\  2 \\ -4 \\ \end{bmatrix} $$  
+$$ \vec{b} = \begin{bmatrix} -3 \\ 9 \\ -6 \\ 12 \\ \end{bmatrix} $$  
+$$ \vec{c} = \begin{bmatrix} 2 \\ -1 \\ 4 \\ 2 \\ \end{bmatrix} $$  
+$$ \vec{d} = \begin{bmatrix} -4 \\ 5 \\ -3 \\ 7 \\ \end{bmatrix} $$  
 
 1. 加载库  
 ![](images/lab10/loadmodule.png)
@@ -32,12 +28,12 @@ $$ \vec{d} $$ = $ \begin{bmatrix} -4 \\ 5 \\ -3 \\ 7 \\ \end{bmatrix} $
 2. 创建题目给的矩阵  
 ![](images/lab10/creatmatrix.png)
 
-3. 使用.shape查看矩阵维度
+3. 使用.shape查看矩阵维度  
 ![](images/lab10/dimensions.png)
 
 ### 2. 求下列矩阵的转置、逆（如果可逆）
 
-B = $ \begin{bmatrix} 0 & 1 & 2 \\ 1 & 0 & 3 \\ 4 & -3 & 8 \\ \end{bmatrix} $
+B = $$ \begin{bmatrix} 0 & 1 & 2 \\ 1 & 0 & 3 \\ 4 & -3 & 8 \\ \end{bmatrix} $$
 
 1. 输入上述矩阵  
 ![inputB](images/lab10/inputB.png)
@@ -45,6 +41,6 @@ B = $ \begin{bmatrix} 0 & 1 & 2 \\ 1 & 0 & 3 \\ 4 & -3 & 8 \\ \end{bmatrix} $
 2. 求解上述矩阵的转置  
 ![B.tranpose](images/lab10/tranpose.png)
 
-3. 求上述举证的逆  
+3. 求上述矩阵的逆  
 ![A**-1](images/lab10/wayone.png)  
 ![A.I](images/lab10/waytwo.png)
