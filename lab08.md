@@ -45,8 +45,8 @@ title: 游戏开发博客
 +------------+-----------------------------------------+
 | Trophy Cup | Cup destroyed when touched by Hotdog    |
 +------------+-----------------------------------------+
-| Sore       | Sore +1 when Player eat a Hotdog        |
-|            | Sore -5 when a Cup destoryed            |
+| Core       | Core +1 when Player eat a Hotdog        |
+|            | Core -5 when a Cup destoryed            |
 +------------+-----------------------------------------+
 </pre>
 
@@ -59,8 +59,23 @@ title: 游戏开发博客
 +--------+----------------------------------+
 | Hotdog | destroyed when touched by Hotdog |
 +--------+----------------------------------+
-| Sore   | Sore -5 when Cup destroyed       |
+| Core   | Core -5 when Cup destroyed       |
 +--------+----------------------------------+
 | game   | game over when all Cup destroyed |
 +--------+----------------------------------+
+</pre>
+
+4. Core：  
+<pre>
++---------------------------------------------+  
+| Core                                        |  
++---------------------------------------------+
+| heighth, length, width; place, color        |
++--------+------------------------------------+
+| Hotdog | +1 when Hotdog destroyed by Player |
++--------+------------------------------------+
+| Cup    | -5 when Cup destroyed              |
++--------+------------------------------------+
+| game   | game over when Core < 0            |
++--------+------------------------------------+
 </pre>
