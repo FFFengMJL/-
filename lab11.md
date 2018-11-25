@@ -51,3 +51,12 @@ In reaction to opposition to DRM, many publishers and artists label their works 
 <p style="text-align: right">
 ——<a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E5%AD%97%E7%89%88%E6%9D%83%E7%AE%A1%E7%90%86" target="_blank">维基百科（数字版权管理）</a>
 </p>
+
+<blockquote>
+即使是对DRM最苛刻严厉的批评家也要承认它有它的用处。DRM也许会损害消费者的利益，但是如果没有DRM的话，公共图书馆就不能外借电子书，各个公司也无法控制他们的专有信息了。
+ 
+　　但是你肯定不会听到DRM的批评家，甚至是DRM的倡导者表示，DRM作为唯一能够保证他们“获得一定工作回报”的唯一途径，是必不可少的。
+</blockquote>
+<p style="text-align: right">
+——<a href="http://www.hupress.com/index.php?m=content&c=index&a=show&catid=11&id=512" target="_blank">《DRM是唯一保证收入的方法》</a>李慧楠 
+</p>
