@@ -60,14 +60,14 @@ In reaction to opposition to DRM, many publishers and artists label their works 
 
 ### 3. 反对
 
-1. ![](images/lab11/FCKDRM.png)
+1. ![](../images/lab11/FCKDRM.png)
 <p style="text-align: right">
 ——图片来源于<a href="https://fckdrm.com/chinese.html" target="_blank">FCKDRM</a>
 </p>
 
 2. 高成本去加密，去防盗版，但是依然无法战胜**盗版**。  
 （《生化危机7》D加密惨遭破解）  
-![](images/lab11/zhbre7.png)
+![](../images/lab11/zhbre7.png)
 
 <blockquote>
 廠商雖然耗盡心思去設計更嚴格的 DRM 保護機制，認為這樣就可以防止盜版不會流通，但對於想要玩盜版的玩家來說，他們總是能在網路上找到破解版的載點。

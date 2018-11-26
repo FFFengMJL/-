@@ -64,4 +64,4 @@ title: 游戏开发博客
 
 ### 2. 成果展示
 
-![](images/lab08/final.gif)
+![](../images/lab08/final.gif)

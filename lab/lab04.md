@@ -25,7 +25,7 @@ title: 简要介绍奇偶校验
 3. 类型与表示  
 >1. 类型：奇偶校验，顾名思义，即有奇校验和偶校验，奇偶校验位也分成**奇校验位**和**偶校验位**。  
 >2. 表示：一般来说我们的ASCII码都放在后7位，那么奇偶校验位便可以放在**最前一位**如图：  
-![](images/lab04/Parity%20check%20on%20wiki.png)  
+![](../images/lab04/Parity%20check%20on%20wiki.png)  
 当然放在**最后一位**也是有的，如图：  
 ![](https://pic4.zhimg.com/80/v2-2c0f22d050dcbccef85eacee21de747d_hd.jpg)
 
