@@ -24,7 +24,7 @@ title: 排序
 
 3. <a herf="#count">计数排序</a>
 
-4. 桶排序
+4. <a href="#bucket">桶排序</a>
 
 5. 最小成本排序
 
@@ -175,8 +175,7 @@ title: 排序
     * 桶越小，速度越快，空间消耗越大
 
 <blockquote>
-<p style="text-align: center">
 图片与部分资料来自<a href="https://www.cnblogs.com/onepixel/articles/7674659.html" target="_blank">一像素的博客</a>
+
 部分图片与资料来自《挑战程序设计竞赛》第二册《算法与数据结构》
-</p>
 </blockquote>
