@@ -9,9 +9,7 @@
 #define SNAKE_FOOD '$'
 #define WALL_CELL '*'
 /*put a food randomized on a blank cell*/
-/*
-void Put_Money(void)
-*/
+/*void Put_Money(void)*/
 /*out cells of the gird*/
 int GG=0;
 char map[12][12]={
@@ -114,17 +112,11 @@ void Snake_Move(int snakelen){
     }
 }
 
-/*int snakeX[SANKE_MAX_LENGTH]={1,2,3,4,5};*/
-/*int snakeY[SANKE_MAX_LENGTH]={1,1,1,1,1};*/
-
-
 int main(void){
-/*    Gameover();*/
     int i;
     for(i=0;i<snakelen;i++){/*初始化坐标数组*/
         snake_xy[i][0]=1;
         snake_xy[i][1]=snakelen-i;
-/*        printf("%d\t%d\n",snake_xy[i][0],snake_xy[i][1]);坐标初始化没有问题*/
     }
     char direct;
     while(GG != 1){
