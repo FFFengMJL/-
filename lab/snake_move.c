@@ -6,54 +6,45 @@
 #define SNAKE_HEAD 'H'
 #define SNAKE_BODY 'X'
 #define BLANK_CELL ' '
-#define SNAKE_FOOD "$"
+#define SNAKE_FOOD '$'
 #define WALL_CELL '*'
-
-/*dy=-1(down), 1(up), 0(no move); dx=-1(left), 1(right), 0(no move)*/
-
-void Snake_Move(int kb,int len){
-    char direct;
-    direct=getchar();
-    int eat=0;
-    switch(direct){
-        case a:
-        case A:if(snake_xy[1][1] != snake_xy[0][1] || snake_xy[1][1]+1 != snake_xy[0][1]){
-            snake_xy[0][0]--;
-            int i;
-            if(map[snake_xy[0][0]-1][snake_xy[0][1]-1] == SNAKE_FOOD){
-                eat=1;
-            }
-            if(eat){
-                snakelen++;
-                snake_xy[snakelen-1][0]=snake_xy[snakelen-2][0];
-                snake_xy[snakelen-1][1]=snake_xy[snakelen-2][1];
-            }
-            for(i=0;i<snakelen-1;i++){
-                snake_xy[i+1][0]=snake_xy[i][0];
-                snake_xy[i+1][1]=snake_xy[i][1];
-            }
-            map[snake_xy[0][0]-1][snake_xy[0][1]-1]=SNAKE_HEAD;
-            map[snake_xy[1][1]-1][snake_xy[1][1]-1]=SNAKE_BODY;
-        }
-    }
-}
-
 /*put a food randomized on a blank cell*/
 /*
 void Put_Money(void)
 */
 /*out cells of the gird*/
+int GG=0;
+char map[12][12]={
+    {"***********"},
+    {"*XXXXH    *"},
+    {"*         *"},
+    {"*         *"},
+    {"*         *"},
+    {"*         *"},
+    {"*         *"},
+    {"*         *"},
+    {"*         *"},
+    {"*         *"},
+    {"*         *"},
+    {"***********"}
+};
 
-void Output(void){
+int snakelen=5;
+int snake_xy[SANKE_MAX_LENGTH][2];/*x是竖，y是横*/
+
+
+void Output(void){/*no problem*/
     int i;
+    system("clear");/*清屏*/
     for(i=0;i<12;i++){
-        printf("%s",map[i]);
+        printf("%s\n",map[i]);
+        /*if(i != 11){
+            printf("\n");
+        }*/
     }
 }
 
-/*outs when gameover*/
-
-void Gameover(void){
+void Gameover(void){/*no problem*/
     char map_GG[12][12]={
         "***********",
         "*         *",
@@ -68,39 +59,76 @@ void Gameover(void){
         "*         *",
         "***********"
     };
+    system("clear");
     int i;
     for(i=0;i<12;i++){
         printf("%s\n",map_GG[i]);
     }
 }
 
-char map[12][12]={
-    "************",
-    "*XXXXh     *",
-    "*          *",
-    "*          *",
-    "*          *",
-    "*          *",
-    "*          *",
-    "*          *",
-    "*          *",
-    "*          *",
-    "*          *",
-    "************"
-};
+/*x是竖，y是横*/
+/*复制除了头之外的蛇的坐标*/
+void MoveButHead(int snakelen){
+    int i;
+    map[snake_xy[snakelen-1][0]][snake_xy[snakelen-1][1]]=' ';/*将蛇尾消失*/
+    for(i=snakelen-1;i>=1;i--){/*倒序赋值，避免逻辑错误*/
+        snake_xy[i][0]=snake_xy[i-1][0];
+        snake_xy[i][1]=snake_xy[i-1][1];
+    }
+}
 
-int snakeX[SANKE_MAX_LENGTH]={1,2,3,4,5};
-int snakeY[SANKE_MAX_LENGTH]={1,1,1,1,1};
-int snakelen=5;
-int snake_xy[SANKE_MAX_LENGTH][2];
+void MoveHead(void){
+    map[snake_xy[1][0]][snake_xy[1][1]]='X';/*原本的头变为身子*/
+    map[snake_xy[0][0]][snake_xy[0][1]]='H';/*头出现*/
+}
+
+void Snake_Move(int snakelen){
+    scanf("%c",&direct);/*此处爆炸？*/
+    switch(direct){
+        case 'a':
+        case 'A':if(snake_xy[1][1]+1 != snake_xy[0][1]){/*判断条件：脖子不在头的要转向的方向*/
+            MoveButHead(snakelen);
+            snake_xy[0][1]--;/*头纵坐标-1*/
+            MoveHead();
+        }break;
+        case 'w':
+        case 'W':if(snake_xy[1][0]+1 != snake_xy[0][0]){
+            MoveButHead(snakelen);
+            snake_xy[0][0]-=1;/*头横坐标-1*/
+            MoveHead();
+        }break;
+        case 's':
+        case 'S':if((snake_xy[1][0]-1) != (snake_xy[0][0])){
+            MoveButHead(snakelen);
+            snake_xy[0][0]+=1;/*头横坐标+1*/
+            MoveHead();
+        }break;
+        case 'd':
+        case 'D':if(snake_xy[1][1]-1 != snake_xy[0][1]){
+            MoveButHead(snakelen);
+            snake_xy[0][1]++;/*头纵坐标+1*/
+            MoveHead();
+        }break;
+        case 'q':GG=1;Gameover();break;
+        default:break;
+    }
+}
+
+/*int snakeX[SANKE_MAX_LENGTH]={1,2,3,4,5};*/
+/*int snakeY[SANKE_MAX_LENGTH]={1,1,1,1,1};*/
 
 
 int main(void){
-    Gameover();
+/*    Gameover();*/
     int i;
-    for(i=0;i<snakelen;i++){//初始化坐标数组
-        snake_xy[i][0]=i+1;
-        snake_xy[i][1]=1;
+    for(i=0;i<snakelen;i++){/*初始化坐标数组*/
+        snake_xy[i][0]=1;
+        snake_xy[i][1]=snakelen-i;
+/*        printf("%d\t%d\n",snake_xy[i][0],snake_xy[i][1]);坐标初始化没有问题*/
     }
-    
+    char direct;
+    while(GG != 1){
+        Output();
+        Snake_Move(snakelen);
+    }
 }
