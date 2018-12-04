@@ -180,6 +180,7 @@ int main(void){
         Snake_Move(snakelen);
     }
 }
+
 </pre>
 
 ## 2. snake_eat
