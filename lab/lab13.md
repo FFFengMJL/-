@@ -12,13 +12,19 @@ title: 贪吃蛇实验报告
 
 * <a href="#SM_2">细节问题</a>
 
-* <a href="#SM_3">C 语言代码（比较长）</a>
+* <a href="#SM_3">C 语言代码（119行）</a>
 
 ### 2. snake_eat
 
+* <a href="#SE_1">伪代码</a>
+
+* <a href="#SE_2">细节问题</a>
+
+* <a herf="#SE_3">C 语言代码（181行）</a>
+
 ## 1. snake_move
 
-#### 1. 伪代码<a name="SM_1"></a>
+#### 1. 伪代码<a name="SM_1"></a>：
 <pre>
 输出字符矩阵
 	WHILE not 游戏结束 DO
@@ -36,7 +42,7 @@ title: 贪吃蛇实验报告
 
 ![](https://sysu-swi.github.io/images/snake-head.png)
 
-#### 2. 细节问题<a name="SM_2"></a>
+#### 2. 细节问题<a name="SM_2"></a>：
 
 1. 问题一：蛇如何移动 
 > 在通过测试之后，发现竖对应字符串的第一个指针，横对应第二个，故将常规的XY坐标轴顺时针旋转90度
@@ -49,9 +55,10 @@ title: 贪吃蛇实验报告
 3. 问题三：坐标储存
 答：经过长时间的 debug 发现，XY轴是**顺时针旋转90度**的，在编程中需要注意；由于边框的存在，导致坐标**不需要-1**即可对应相应位置
 
-#### 3. C 语言代码<a name="SM_3"></a>
+#### 3. C 语言代码<a name="SM_3"></a>：
 
->代码比较长，而且没有高亮，所以可以看这个<a href="https://paste.ubuntu.com/p/DNGMfZtxp9/" target="_blank">PasteBin Ubuntu网页</a>的（放心，代码是一样的）
+> 代码比较长，而且没有高亮，所以可以看这个我的 github 里面的，<a href="https://github.com/FFFengMJL/homework/blob/gh-pages/lab/snake_move.c"target="_blank">点我打开</a>
+> 或者这个<a href="https://paste.ubuntu.com/p/DNGMfZtxp9/" target="_blank">PasteBin Ubuntu链接</a>（放心，代码是一样的）
 
 <pre>
 #include<stdio.h>
@@ -177,7 +184,44 @@ int main(void){
 
 ## 2. snake_eat
 
-C语言代码：
+#### 1. 伪代码<a name="SE_1"></a>：
+<pre>
+输出字符矩阵
+	WHILE not 游戏结束 DO
+        随机在游戏区域产生 MONEY
+		ch＝等待输入
+		CASE ch DO
+		‘A’:左前进一步，break 
+		‘D’:右前进一步，break    
+		‘W’:上前进一步，break    
+		‘S’:下前进一步，break    
+		END CASE
+        IF SANKE_HEAD 触碰 WALL_CELL OR BODY_CELL THEN
+            输出 Game Over!!!
+        ELSE IF SNAKE_HEAD 触碰 MONEY THEN
+            SNAKE_LENGTH += 1 #蛇长度+1
+        ENDIF
+		输出字符矩阵
+	END WHILE
+	输出 Game Over!!! 
+</pre>
+
+#### 2. 细节问题<a name="SE_2"></a>：
+
+1. 问题一：如何判断该不该产生 MONEY
+答：设定一个**全局变量**，当场上存在 MONEY/蛇没吃 MONEY 时开关关闭；当蛇吃了 MONEY 时，开关打开，同时通过**随机函数**在**空白区域**产生一个 MONEY，产生后将开关关闭
+
+2. 问题二：如何判定撞墙/我 吃 我 自 己的死亡
+答：声明并定义一个新的函数，提前**预览下一步蛇头的位置**，如果处在 WALL_CELL 或者 BODY_CELL 的位置，则判定游戏结束
+
+3. 问题三：如何判定胜利？
+答：我个人是设定胜利条件是蛇长度达到最大值（SNAKE_MAX_LENGTH），并且再吃一个 MONEY 即为胜利，所以只需要在**吃到 MONEY 的时候判断蛇长度**是否达到了最大长度即可
+
+#### 3. C语言代码<a name="SE_3"></a>：
+
+> 代码**没有高亮**，还，可以到**我的 github 仓库**中查看，<a href="https://github.com/FFFengMJL/homework/blob/gh-pages/lab/snake_eat.c" target="_blank">点我打开</a>
+> 也可以查看这个 <a href="https://paste.ubuntu.com/p/s4pFg2tZGr/" target="_blank">Pastebin Ubuntun 链接</a>
+
 <pre>
 #include<stdio.h>
 #include<stdlib.h>
