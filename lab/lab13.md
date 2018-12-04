@@ -20,7 +20,7 @@ title: 贪吃蛇实验报告
 
 * <a href="#SE_2">细节问题</a>
 
-* <a herf="#SE_3">C 语言代码（181行）</a>
+* <a href="#SE_3">C 语言代码（181行）</a>
 
 ## 1. snake_move
 
@@ -57,8 +57,8 @@ title: 贪吃蛇实验报告
 
 #### 3. C 语言代码<a name="SM_3"></a>：
 
-> 代码比较长，而且没有高亮，所以可以看这个我的 github 里面的，<a href="https://github.com/FFFengMJL/homework/blob/gh-pages/lab/snake_move.c"target="_blank">点我打开</a>
-> 或者这个<a href="https://paste.ubuntu.com/p/DNGMfZtxp9/" target="_blank">PasteBin Ubuntu链接</a>（放心，代码是一样的）
+代码比较长，而且没有高亮，所以可以看这个我的 github 里面的，<a href="https://github.com/FFFengMJL/homework/blob/gh-pages/lab/snake_move.c"target="_blank">点我打开</a>
+或者这个<a href="https://paste.ubuntu.com/p/DNGMfZtxp9/" target="_blank">PasteBin Ubuntu链接</a>（放心，代码是一样的）
 
 <pre>
 #include<stdio.h>
@@ -171,7 +171,7 @@ void Snake_Move(int snakelen){
 
 int main(void){
     int i;
-    for(i=0;i<snakelen;i++){/*初始化坐标数组*/
+    for(i=0;i < snakelen;i++){/*初始化坐标数组*/
         snake_xy[i][0]=1;
         snake_xy[i][1]=snakelen-i;
     }
@@ -185,6 +185,7 @@ int main(void){
 ## 2. snake_eat
 
 #### 1. 伪代码<a name="SE_1"></a>：
+
 <pre>
 输出字符矩阵
 	WHILE not 游戏结束 DO
@@ -219,8 +220,8 @@ int main(void){
 
 #### 3. C语言代码<a name="SE_3"></a>：
 
-> 代码**没有高亮**，还，可以到**我的 github 仓库**中查看，<a href="https://github.com/FFFengMJL/homework/blob/gh-pages/lab/snake_eat.c" target="_blank">点我打开</a>
-> 也可以查看这个 <a href="https://paste.ubuntu.com/p/s4pFg2tZGr/" target="_blank">Pastebin Ubuntun 链接</a>
+代码**没有高亮**，还，可以到**我的 github 仓库**中查看，<a href="https://github.com/FFFengMJL/homework/blob/gh-pages/lab/snake_eat.c" target="_blank">点我打开</a>  
+也可以查看这个 <a href="https://paste.ubuntu.com/p/s4pFg2tZGr/" target="_blank">Pastebin Ubuntun 链接</a>
 
 <pre>
 #include<stdio.h>
@@ -395,7 +396,7 @@ void Snake_Move(int snakelen){
 
 int main(void){
     int i;
-    for(i=0;i<snakelen;i++){/*初始化坐标数组*/
+    for(i=0;i < snakelen;i++){/*初始化坐标数组*/
         snake_xy[i][0]=1;
         snake_xy[i][1]=snakelen-i;
     }
