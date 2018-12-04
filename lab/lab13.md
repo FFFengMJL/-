@@ -142,6 +142,7 @@ void MoveHead(void){
 }
 
 void Snake_Move(int snakelen){
+    char direct;
     scanf("%c",&direct);
     switch(direct){
         case 'a':
@@ -181,10 +182,9 @@ int main(void){
         snake_xy[i][1]=snakelen-i;
 /*        printf("%d\t%d\n",snake_xy[i][0],snake_xy[i][1]);坐标初始化没有问题*/
     }
-    char direct;
     while(GG != 1){
         Output();
-        Snake_Move(snakelen);
+        Snake_Move(snakelen,direct);
     }
 }
 </pre>
