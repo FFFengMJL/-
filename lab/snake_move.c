@@ -7,9 +7,9 @@
 /*  All rights reserved   */
 /**/
 
-#include<stdio.h>
-#include<stdlib.h>
-#include<time.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 #define SANKE_MAX_LENGTH 20
 #define SNAKE_HEAD 'H'
