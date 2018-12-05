@@ -14,7 +14,7 @@ title: 实验报告
 > PC：读取下一个指令的地址；  
 > IR：读取地址中的指令并且保存它。
 
-{:stary="2"}
+{:start="2"}
 2. ACC 寄存器的全称与作用。
 
 > *ACC* (**Acc**umulator register): In a computer's central processing unit (CPU), an accumulator is a register in which intermediate arithmetic and logic results are stored.
