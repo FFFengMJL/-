@@ -1,3 +1,12 @@
+/*  snake_eat.c   */
+/**/
+/*  Based on file created by Maolin Pan on 12-12-6  */
+/*  Created by Jialong Mi on 2018.12  */
+/**/
+/*  Copyright (c) 2012年 Sun Yat-sen University.  */
+/*  All rights reserved   */
+/**/
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>

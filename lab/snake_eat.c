@@ -1,3 +1,12 @@
+/*  snake_eat.c   */
+/**/
+/*  Based on file created by Maolin Pan on 12-12-6  */
+/*  Created by Jialong Mi on 2018.12  */
+/**/
+/*  Copyright (c) 2012年 Sun Yat-sen University.  */
+/*  All rights reserved   */
+/**/
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
@@ -8,10 +17,12 @@
 #define BLANK_CELL ' '
 #define SNAKE_FOOD '$'
 #define WALL_CELL '*'
-/*put a food randomized on a blank cell*/
-/*void Put_Money(void)*/
-/*out cells of the gird*/
+
 int GG=0;
+int snakelen=5;
+int snake_xy[SANKE_MAX_LENGTH][2];/*x是竖，y是横*/
+int Money=1;/*游戏区域是否有钱，默认没钱*/
+int eat=0;/*表示刚刚是否吃屎*/
 char map[12][12]={
   {"***********"},
   {"*XXXXH    *"},
@@ -27,10 +38,8 @@ char map[12][12]={
   {"***********"}
 };
 
-int snakelen=5;
-int snake_xy[SANKE_MAX_LENGTH][2];/*x是竖，y是横*/
-int Money=1;/*游戏区域是否有钱，默认没钱*/
-int eat=0;/*表示刚刚是否吃屎*/
+
+/*put a food randomized on a blank cell*/
 void Put_Money(void){/**/
   while(Money){/*区域里面没钱*/
   int x=rand()%10+1;

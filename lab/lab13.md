@@ -58,7 +58,6 @@ title: 贪吃蛇实验报告
 #### 3. C 语言代码<a name="SM_3"></a>：
 
 代码比较长，而且**没有高亮**，所以可以看这个我的 github 里面的，<a href="https://github.com/FFFengMJL/homework/blob/gh-pages/lab/snake_move.c" target="_blank">点我打开</a>
-或者这个<a href="https://paste.ubuntu.com/p/DNGMfZtxp9/" target="_blank">PasteBin Ubuntu链接</a>（放心，代码是一样的）
 
 <pre id="bug_1"></pre>
 
@@ -101,12 +100,20 @@ title: 贪吃蛇实验报告
 #### 3. C语言代码<a name="SE_3"></a>：
 
 代码**没有高亮**，可以到**我的 github 仓库**中查看，<a href="https://github.com/FFFengMJL/homework/blob/gh-pages/lab/snake_eat.c" target="_blank">点我打开</a>  
-也可以查看这个 <a href="https://paste.ubuntu.com/p/s4pFg2tZGr/" target="_blank">Pastebin Ubuntun 链接</a>
 
 <pre id="bug_2"></pre>
 
 <script>
-document.getElementById('bug_1').innerText = `#include<stdio.h>
+document.getElementById('bug_1').innerText = `/*  snake_eat.c   */
+/**/
+/*  Based on file created by Maolin Pan on 12-12-6  */
+/*  Created by Jialong Mi on 2018.12  */
+/**/
+/*  Copyright (c) 2012年 Sun Yat-sen University.  */
+/*  All rights reserved   */
+/**/
+
+#include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
 
@@ -119,113 +126,122 @@ document.getElementById('bug_1').innerText = `#include<stdio.h>
 
 int GG=0;
 char map[12][12]={
-    {"***********"},
-    {"*XXXXH    *"},
-    {"*         *"},
-    {"*         *"},
-    {"*         *"},
-    {"*         *"},
-    {"*         *"},
-    {"*         *"},
-    {"*         *"},
-    {"*         *"},
-    {"*         *"},
-    {"***********"}
+  {"***********"},
+  {"*XXXXH    *"},
+  {"*         *"},
+  {"*         *"},
+  {"*         *"},
+  {"*         *"},
+  {"*         *"},
+  {"*         *"},
+  {"*         *"},
+  {"*         *"},
+  {"*         *"},
+  {"***********"}
 };
 int snakelen=5;
 int snake_xy[SANKE_MAX_LENGTH][2];/*x是竖坐标，y是横坐标*/
 
 
 void Output(void){/*输出*/
-    int i;
-    system("clear");/*清屏（Ubuntu版本命令），win版本未尝试*/
-    for(i=0;i<12;i++){
-        printf("%s\n",map[i]);
-    }
+  int i;
+  system("clear");/*清屏（Ubuntu版本命令），win版本未尝试*/
+  for(i=0;i<12;i++){
+      printf("%s\n",map[i]);
+  }
 }
 
 void Gameover(void){/*游戏结束*/
-    char map_GG[12][12]={
-        "***********",
-        "*         *",
-        "*         *",
-        "*         *",
-        "* G a m e *",
-        "*         *",
-        "* O v e r *",
-        "*         *",
-        "*         *",
-        "*         *",
-        "*         *",
-        "***********"
-    };
-    system("clear");
-    int i;
-    for(i=0;i<12;i++){
-        printf("%s\n",map_GG[i]);
-    }
+  char map_GG[12][12]={
+      "***********",
+      "*         *",
+      "*         *",
+      "*         *",
+      "* G a m e *",
+      "*         *",
+      "* O v e r *",
+      "*         *",
+      "*         *",
+      "*         *",
+      "*         *",
+      "***********"
+  };
+  system("clear");
+  int i;
+  for(i=0;i<12;i++){
+      printf("%s\n",map_GG[i]);
+  }
 }
 
 /*x是竖，y是横*/
 /*复制除了头之外的蛇的坐标*/
 void MoveButHead(int snakelen){
-    int i;
-    map[snake_xy[snakelen-1][0]][snake_xy[snakelen-1][1]]=' ';/*将蛇尾消失*/
-    for(i=snakelen-1;i>=1;i--){/*倒序赋值，避免逻辑错误*/
-        snake_xy[i][0]=snake_xy[i-1][0];
-        snake_xy[i][1]=snake_xy[i-1][1];
-    }
+  int i;
+  map[snake_xy[snakelen-1][0]][snake_xy[snakelen-1][1]]=' ';/*将蛇尾消失*/
+  for(i=snakelen-1;i>=1;i--){/*倒序赋值，避免逻辑错误*/
+      snake_xy[i][0]=snake_xy[i-1][0];
+      snake_xy[i][1]=snake_xy[i-1][1];
+  }
 }
 
 void MoveHead(void){
-    map[snake_xy[1][0]][snake_xy[1][1]]='X';/*原本的头变为身子*/
-    map[snake_xy[0][0]][snake_xy[0][1]]='H';/*新的头出现*/
+  map[snake_xy[1][0]][snake_xy[1][1]]='X';/*原本的头变为身子*/
+  map[snake_xy[0][0]][snake_xy[0][1]]='H';/*新的头出现*/
 }
 
 void Snake_Move(int snakelen){
-    char direct=getchar();
-    switch(direct){
-        case 'a':
-        case 'A':if(snake_xy[1][1]+1 != snake_xy[0][1]){/*判断条件：脖子不在头的要转向的方向*/
-            MoveButHead(snakelen);
-            snake_xy[0][1]--;/*头Y坐标-1*/
-            MoveHead();
-        }break;
-        case 'w':
-        case 'W':if(snake_xy[1][0]+1 != snake_xy[0][0]){
-            MoveButHead(snakelen);
-            snake_xy[0][0]-=1;/*头X坐标-1*/
-            MoveHead();
-        }break;
-        case 's':
-        case 'S':if((snake_xy[1][0]-1) != (snake_xy[0][0])){
-            MoveButHead(snakelen);
-            snake_xy[0][0]+=1;/*头X坐标+1*/
-            MoveHead();
-        }break;
-        case 'd':
-        case 'D':if(snake_xy[1][1]-1 != snake_xy[0][1]){
-            MoveButHead(snakelen);
-            snake_xy[0][1]++;/*头Y坐标+1*/
-            MoveHead();
-        }break;
-        case 'q':GG=1;Gameover();break;
-        default:break;
-    }
+  char direct=getchar();
+  switch(direct){
+      case 'a':
+      case 'A':if(snake_xy[1][1]+1 != snake_xy[0][1]){/*判断条件：脖子不在头的要转向的方向*/
+        MoveButHead(snakelen);
+        snake_xy[0][1]--;/*头Y坐标-1*/
+        MoveHead();
+      }break;
+      case 'w':
+      case 'W':if(snake_xy[1][0]+1 != snake_xy[0][0]){
+        MoveButHead(snakelen);
+        snake_xy[0][0]-=1;/*头X坐标-1*/
+        MoveHead();
+      }break;
+      case 's':
+      case 'S':if((snake_xy[1][0]-1) != (snake_xy[0][0])){
+        MoveButHead(snakelen);
+        snake_xy[0][0]+=1;/*头X坐标+1*/
+        MoveHead();
+      }break;
+      case 'd':
+      case 'D':if(snake_xy[1][1]-1 != snake_xy[0][1]){
+        MoveButHead(snakelen);
+        snake_xy[0][1]++;/*头Y坐标+1*/
+        MoveHead();
+      }break;
+      case 'q':GG=1;Gameover();break;
+      default:break;
+  }
 }
 
 int main(void){
-    int i;
-    for(i=0;i<snakelen;i++){/*初始化坐标数组*/
-        snake_xy[i][0]=1;
-        snake_xy[i][1]=snakelen-i;
-    }
-    while(GG != 1){
-        Output();
-        Snake_Move(snakelen);
-    }
+  int i;
+  for(i=0;i<snakelen;i++){/*初始化坐标数组*/
+      snake_xy[i][0]=1;
+      snake_xy[i][1]=snakelen-i;
+  }
+  while(GG != 1){
+      Output();
+      Snake_Move(snakelen);
+  }
 }`
-document.getElementById('bug_2').innerText = `#include<stdio.h>
+document.getElementById('bug_2').innerText = `/*  snake_eat.c   */
+/**/
+/*  Based on file created by Maolin Pan on 12-12-6  */
+/*  Created by Jialong Mi on 2018.12  */
+/**/
+/*  Copyright (c) 2012年 Sun Yat-sen University.  */
+/*  All rights reserved   */
+/**/
+
+#include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
 
@@ -235,175 +251,175 @@ document.getElementById('bug_2').innerText = `#include<stdio.h>
 #define BLANK_CELL ' '
 #define SNAKE_FOOD '$'
 #define WALL_CELL '*'
-/*put a food randomized on a blank cell*/
-/*void Put_Money(void)*/
-/*out cells of the gird*/
-int GG=0;
-char map[12][12]={
-    {"***********"},
-    {"*XXXXH    *"},
-    {"*         *"},
-    {"*         *"},
-    {"*         *"},
-    {"*         *"},
-    {"*         *"},
-    {"*         *"},
-    {"*         *"},
-    {"*         *"},
-    {"*         *"},
-    {"***********"}
-};
 
+int GG=0;
 int snakelen=5;
 int snake_xy[SANKE_MAX_LENGTH][2];/*x是竖，y是横*/
 int Money=1;/*游戏区域是否有钱，默认没钱*/
 int eat=0;/*表示刚刚是否吃屎*/
+char map[12][12]={
+  {"***********"},
+  {"*XXXXH    *"},
+  {"*         *"},
+  {"*         *"},
+  {"*         *"},
+  {"*         *"},
+  {"*         *"},
+  {"*         *"},
+  {"*         *"},
+  {"*         *"},
+  {"*         *"},
+  {"***********"}
+};
+
+
+/*put a food randomized on a blank cell*/
 void Put_Money(void){/**/
-    while(Money){/*区域里面没钱*/
-        int x=rand()%10+1;
-        int y=rand()%10+1;
-        if(map[x][y] == ' '){
-            map[x][y]='$';
-            Money--;
-        }
-    }
+  while(Money){/*区域里面没钱*/
+  int x=rand()%10+1;
+  int y=rand()%10+1;
+  if(map[x][y] == ' '){
+    map[x][y]='$';
+    Money--;
+  }
+  }
 }
 
 void Gameover(int a){/*将GG修改集成于此，添加了胜利的结算画面*/
-    char map_GG[12][12]={
-        "***********",
-        "*         *",
-        "*         *",
-        "*         *",
-        "* G a m e *",
-        "*         *",
-        "* O v e r *",
-        "*         *",
-        "*         *",
-        "*         *",
-        "*         *",
-        "***********"
-    };
-    char map_WIN[12][12]={
-        "***********",
-        "*         *",
-        "*         *",
-        "*         *",
-        "*  Y O U  *",
-        "*         *",
-        "*  W I N  *",
-        "*         *",
-        "*         *",
-        "*         *",
-        "*         *",
-        "***********"
-    };
-    system("clear");
-    GG=1;
-    int i;
-    if(a == 1){
-        for(i=0;i<12;i++){
-            printf("%s\n",map_WIN[i]);
-        }
-    }
-    else if(a == 0){
-        for(i=0;i<12;i++){
-            printf("%s\n",map_GG[i]);
-        }
-    }
+  char map_GG[12][12]={
+      "***********",
+      "*         *",
+      "*         *",
+      "*         *",
+      "* G a m e *",
+      "*         *",
+      "* O v e r *",
+      "*         *",
+      "*         *",
+      "*         *",
+      "*         *",
+      "***********"
+  };
+  char map_WIN[12][12]={
+      "***********",
+      "*         *",
+      "*         *",
+      "*         *",
+      "*  Y O U  *",
+      "*         *",
+      "*  W I N  *",
+      "*         *",
+      "*         *",
+      "*         *",
+      "*         *",
+      "***********"
+  };
+  system("clear");
+  GG=1;
+  int i;
+  if(a == 1){
+      for(i=0;i<12;i++){
+        printf("%s\n",map_WIN[i]);
+      }
+  }
+  else if(a == 0){
+      for(i=0;i<12;i++){
+        printf("%s\n",map_GG[i]);
+      }
+  }
 }
 
 
 void Crush_Foresee(int x_fore,int y_fore){/*康康下一步会不会翻车*/
-    if(map[x_fore][y_fore] == '*' || map[x_fore][y_fore] == 'X'){
-        Gameover(0);/*撞墙/我 吃 我 自 己的话就GG啦*/
-    }
-    else if(map[x_fore][y_fore] == '$'){/*判断会吃屎*/
-        snakelen++;
-        if(snakelen>20){
-            Gameover(1);
-        }
-        eat=1;/*表示即将吃屎*/
-        Money=1;/*表示区域即将没钱*/
-    }
+  if(map[x_fore][y_fore] == '*' || map[x_fore][y_fore] == 'X'){
+      Gameover(0);/*撞墙/我 吃 我 自 己的话就GG啦*/
+  }
+  else if(map[x_fore][y_fore] == '$'){/*判断会吃屎*/
+      snakelen++;
+      if(snakelen>20){
+        Gameover(1);
+      }
+      eat=1;/*表示即将吃屎*/
+      Money=1;/*表示区域即将没钱*/
+  }
 }
 
 void Output(void){/*no problem*/
-    int i;
-    Put_Money();
-    system("clear");/*清屏*/
-    for(i=0;i<12;i++){
-        printf("%s\n",map[i]);
-    }
+  int i;
+  Put_Money();
+  system("clear");/*清屏*/
+  for(i=0;i<12;i++){
+      printf("%s\n",map[i]);
+  }
 }
 
 
 /*x是竖，y是横*/
 /*复制除了头之外的蛇的坐标*/
 void MoveButHead(void){
-    int i;
-    if(eat){/*新加的尾巴坐标是（0,0)*/
-        eat=0;
-    }
-    else{
-        map[snake_xy[snakelen-1][0]][snake_xy[snakelen-1][1]]=' ';/*将蛇尾消失*/
-    }
-    for(i=snakelen-1;i>=1;i--){/*倒序赋值，避免逻辑错误*/
-        snake_xy[i][0]=snake_xy[i-1][0];
-        snake_xy[i][1]=snake_xy[i-1][1];
-    }
+  int i;
+  if(eat){/*新加的尾巴坐标是（0,0)*/
+      eat=0;
+  }
+  else{
+      map[snake_xy[snakelen-1][0]][snake_xy[snakelen-1][1]]=' ';/*将蛇尾消失*/
+  }
+  for(i=snakelen-1;i>=1;i--){/*倒序赋值，避免逻辑错误*/
+      snake_xy[i][0]=snake_xy[i-1][0];
+      snake_xy[i][1]=snake_xy[i-1][1];
+  }
 }
 
 void MoveHead(void){
-    map[snake_xy[1][0]][snake_xy[1][1]]='X';/*原本的头变为身子*/
-    map[snake_xy[0][0]][snake_xy[0][1]]='H';/*头出现*/
+  map[snake_xy[1][0]][snake_xy[1][1]]='X';/*原本的头变为身子*/
+  map[snake_xy[0][0]][snake_xy[0][1]]='H';/*头出现*/
 }
 
 void Snake_Move(int snakelen){
-    char direct=getchar();
-    switch(direct){
-        case 'a':
-        case 'A':if(snake_xy[1][1]+1 != snake_xy[0][1]){/*判断条件：脖子不在头的要转向的方向*/
-            Crush_Foresee(snake_xy[0][0],snake_xy[0][1]-1);
-            MoveButHead();
-            snake_xy[0][1]--;/*头纵坐标-1*/
-            MoveHead();
-        }break;
-        case 'w':
-        case 'W':if(snake_xy[1][0]+1 != snake_xy[0][0]){
-            Crush_Foresee(snake_xy[0][0]-1,snake_xy[0][1]);
-            MoveButHead();
-            snake_xy[0][0]-=1;/*头横坐标-1*/
-            MoveHead();
-        }break;
-        case 's':
-        case 'S':if((snake_xy[1][0]-1) != (snake_xy[0][0])){
-            Crush_Foresee(snake_xy[0][0]+1,snake_xy[0][1]);
-            MoveButHead();
-            snake_xy[0][0]+=1;/*头横坐标+1*/
-            MoveHead();
-        }break;
-        case 'd':
-        case 'D':if(snake_xy[1][1]-1 != snake_xy[0][1]){
-            Crush_Foresee(snake_xy[0][0],snake_xy[0][1]+1);
-            MoveButHead();
-            snake_xy[0][1]++;/*头纵坐标+1*/
-            MoveHead();
-        }break;
-        case 'q':case 'Q':Gameover(0);break;
-        default:break;
-    }
+  char direct=getchar();
+  switch(direct){
+      case 'a':
+      case 'A':if(snake_xy[1][1]+1 != snake_xy[0][1]){/*判断条件：脖子不在头的要转向的方向*/
+        Crush_Foresee(snake_xy[0][0],snake_xy[0][1]-1);
+        MoveButHead();
+        snake_xy[0][1]--;/*头纵坐标-1*/
+        MoveHead();
+      }break;
+      case 'w':
+      case 'W':if(snake_xy[1][0]+1 != snake_xy[0][0]){
+        Crush_Foresee(snake_xy[0][0]-1,snake_xy[0][1]);
+        MoveButHead();
+        snake_xy[0][0]-=1;/*头横坐标-1*/
+        MoveHead();
+      }break;
+      case 's':
+      case 'S':if((snake_xy[1][0]-1) != (snake_xy[0][0])){
+        Crush_Foresee(snake_xy[0][0]+1,snake_xy[0][1]);
+        MoveButHead();
+        snake_xy[0][0]+=1;/*头横坐标+1*/
+        MoveHead();
+      }break;
+      case 'd':
+      case 'D':if(snake_xy[1][1]-1 != snake_xy[0][1]){
+        Crush_Foresee(snake_xy[0][0],snake_xy[0][1]+1);
+        MoveButHead();
+        snake_xy[0][1]++;/*头纵坐标+1*/
+        MoveHead();
+      }break;
+      case 'q':case 'Q':Gameover(0);break;
+      default:break;
+  }
 }
 
 int main(void){
-    int i;
-    for(i=0;i<snakelen;i++){/*初始化坐标数组*/
-        snake_xy[i][0]=1;
-        snake_xy[i][1]=snakelen-i;
-    }
-    while(GG != 1){
-        Output();
-        Snake_Move(snakelen);
+  int i;
+  for(i=0;i<snakelen;i++){/*初始化坐标数组*/
+      snake_xy[i][0]=1;
+      snake_xy[i][1]=snakelen-i;
+  }
+  while(GG != 1){
+      Output();
+      Snake_Move(snakelen);
     }
 }`
 </script>
