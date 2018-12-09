@@ -10,6 +10,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+//#include <sys/types.h>
+//#include <sys/wait.h>
 #include "./kbhit.c"/*直接加载tty*/
 
 #define SANKE_MAX_LENGTH 20
@@ -38,20 +40,6 @@ char map[12][12]={
   {"*         *"},
   {"***********"}
 };
-
-
-/*put a food randomized on a blank cell*/
-void Put_Money(void){/**/
-  while(Money){/*区域里面没钱*/
-    srand((unsigned) time(0));
-    Money_x=rand()%10+1;
-    Money_y=rand()%10+1;
-    if(map[Money_x][Money_y] == ' '){
-      map[Money_x][Money_y]='$';
-      Money--;/*证明已经产生了钱*/
-    }
-  }
-}
 
 void Gameover(int a){/*将GG修改集成于此，添加了胜利的结算画面*/
   char map_GG[12][12]={
@@ -97,18 +85,15 @@ void Gameover(int a){/*将GG修改集成于此，添加了胜利的结算画面*
   }
 }
 
-
-void Crush_Foresee(int x_fore,int y_fore){/*康康下一步会不会翻车*/
-  if(map[x_fore][y_fore] == '*' || map[x_fore][y_fore] == 'X'){
-      Gameover(0);/*撞墙/我 吃 我 自 己的话就GG啦*/
-  }
-  else if(map[x_fore][y_fore] == '$'){/*判断会吃屎*/
-      snakelen++;
-      if(snakelen>20){
-        Gameover(1);
-      }
-      eat=1;/*表示即将吃屎*/
-      Money=1;/*表示区域即将没钱*/
+void Put_Money(void){/**/
+  while(Money){/*区域里面没钱*/
+    srand((unsigned) time(0));
+    Money_x=rand()%10+1;
+    Money_y=rand()%10+1;
+    if(map[Money_x][Money_y] == ' '){
+      map[Money_x][Money_y]='$';
+      Money--;/*证明已经产生了钱*/
+    }
   }
 }
 
@@ -124,6 +109,19 @@ void Output(int GG){/*no problem*/
   }
 }
 
+void Crush_Foresee(int x_fore,int y_fore){/*康康下一步会不会翻车*/
+  if(map[x_fore][y_fore] == '*' || map[x_fore][y_fore] == 'X'){
+      Gameover(0);/*撞墙/我 吃 我 自 己的话就GG啦*/
+  }
+  else if(map[x_fore][y_fore] == '$'){/*判断会吃屎*/
+      snakelen++;
+      if(snakelen>20){
+        Gameover(1);
+      }
+      eat=1;/*表示即将吃屎*/
+      Money=1;/*表示区域即将没钱*/
+  }
+}
 
 /*x是竖，y是横*/
 /*复制除了头之外的蛇的坐标*/
@@ -182,28 +180,50 @@ void Snake_Move(int snakelen,char direct){
   }
 }
 
+char movable[]={'w','a','s','d'};/*走的方式，与最小值的位置对应*/
+int distance[4]={0};
+char Auto_Move(int Money_x,int Money_y){
+  int former_x=snake_xy[0][0];
+  int former_y=snake_xy[0][1];
+  distance[0]=abs(snake_xy[0][0]-1-Money_x)+abs(snake_xy[0][1]-Money_y);/**/
+  distance[1]=abs(snake_xy[0][0]-Money_x)+abs(snake_xy[0][1]-1-Money_y);
+  distance[2]=abs(snake_xy[0][0]+1-Money_x)+abs(snake_xy[0][1]-Money_y);
+  distance[3]=abs(snake_xy[0][0]-Money_x)+abs(snake_xy[0][1]+1-Money_y);
+  int i,t,min=0;
+  for(i=0;i<4;i++){
+    min=(distance[i]<distance[min]?i:min);
+  }
+  Snake_Move(snakelen,movable[min]);
+  if(snake_xy[0][0] == former_x && snake_xy[0][1] == former_y){
+    for(i=0,t=min,min=0;i<4;i++){
+      if(i!=t){
+        min=(distance[i]<distance[min]?i:min);
+      }
+    }
+    Snake_Move(snakelen,movable[min]);
+  }
+//  return movable[min];
+}
+
+/*put a food randomized on a blank cell*/
+
+
+
+
 int main(void){
   int tty_set_flag;
   tty_set_flag = tty_set();
   int i;
   int key;
-  char direct='s';
   for(i=0;i<snakelen;i++){/*初始化坐标数组*/
       snake_xy[i][0]=1;
       snake_xy[i][1]=snakelen-i;
   }
+  Output(GG);
   while(GG != 1){
-    if( kbhit() ) {
-      key=getchar();      
-      Snake_Move(snakelen,key);
-      Output(GG);
-    }
-    else{
-      Snake_Move(snakelen,key);
-      Output(GG);
-    }
+    Auto_Move(Money_x,Money_y);
+    Output(GG);
+    usleep(450000);
   }
-  if(tty_set_flag == 0) 
-          tty_reset();
-  return 0;
+  tty_reset();
 }
