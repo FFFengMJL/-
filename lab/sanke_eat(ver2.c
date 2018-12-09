@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include "./kbhit.c"/*直接加载tty*/
 
 #define SANKE_MAX_LENGTH 20
 #define SNAKE_HEAD 'H'
@@ -85,12 +86,12 @@ void Gameover(int a){/*将GG修改集成于此，添加了胜利的结算画面*
   int i;
   if(a == 1){
       for(i=0;i<12;i++){
-        printf("%s\n",map_WIN[i]);
+        printf("\033[30;47m%s\033[0m\n",map_WIN[i]);
       }
   }
   else if(a == 0){
       for(i=0;i<12;i++){
-        printf("%s\n",map_GG[i]);
+        printf("\033[30;47m%s\033[0m\n",map_GG[i]);
       }
   }
 }
@@ -115,7 +116,7 @@ void Output(void){/*no problem*/
   Put_Money();
   system("clear");/*清屏*/
   for(i=0;i<12;i++){
-      printf("\033[30;47m%s\n\033[0m",map[i]);
+      printf("\033[30;47m%s\033[0m\n",map[i]);
   }
 }
 
@@ -141,8 +142,8 @@ void MoveHead(void){
   map[snake_xy[0][0]][snake_xy[0][1]]='H';/*头出现*/
 }
 
-void Snake_Move(int snakelen){
-  char direct=getchar();
+void Snake_Move(int snakelen,char direct){
+//  char direct=getchar();
   switch(direct){
       case 'a':
       case 'A':if(snake_xy[1][1]+1 != snake_xy[0][1]){/*判断条件：脖子不在头的要转向的方向*/
@@ -178,13 +179,25 @@ void Snake_Move(int snakelen){
 }
 
 int main(void){
+  int tty_set_flag;
+  tty_set_flag = tty_set();
   int i;
+  int key;
   for(i=0;i<snakelen;i++){/*初始化坐标数组*/
       snake_xy[i][0]=1;
       snake_xy[i][1]=snakelen-i;
   }
   while(GG != 1){
+    if( kbhit() ) {
+      key=getchar();      
       Output();
-      Snake_Move(snakelen);
+      Snake_Move(snakelen,key);
     }
+    else{
+      Output();
+    }
+  }
+  if(tty_set_flag == 0) 
+          tty_reset();
+  return 0;
 }
