@@ -46,9 +46,7 @@ printf("\033[30;47m%s\n\033[0m);
 *发现刷新率似乎似乎过快？*  
 > 通过修改第53~54行的代码，修改刷新/输入所需要的时间（second或usecond），从而**改变自动刷新的速率**
 
-5. 尝试使贪吃蛇变得和平常玩的贪吃蛇一样，每一步都**不再需要方向键**输入，而是向着**头的方向**进行移动，于是修改代码，让蛇只在有**方向键输入的时候改变方向**，其它时刻只需要按照**蛇头/上一次输入的方向**移动即可，代码如下：  
-<pre id="ke2"></pre>  
-效果基本符合需求
+5. 尝试使贪吃蛇变得和平常玩的贪吃蛇一样，每一步都**不再需要方向键**输入，而是向着**头的方向**进行移动，于是修改代码，让蛇只在有**方向键输入的时候改变方向**，其它时刻只需要按照**蛇头/上一次输入的方向**移动即可  ，效果基本符合需求，<a href="https://github.com/FFFengMJL/homework/blob/gh-pages/lab/snake_eat_v2.c" target="_blank">代码链接：snake_eat_v2.c</a>
 
 ## 3. 智能（障）蛇
 
@@ -67,10 +65,9 @@ printf("\033[30;47m%s\n\033[0m);
 	}
 </pre>
 
-2. 做出部分修改后，写出AutoMove()函数，代码如下：  
-<pre id="au"></pre>
+2. 做出部分修改后，写出AutoMove()函数  
 
-3. 在贪吃蛇中去除接受输入的函数，并将自动移动的算法写入，最终效果：蛇能够判断并吃屎，但是**无法判断会不会自己吃自己**
+3. 在贪吃蛇中去除接受输入的函数，并将自动移动的算法写入，<a href="https://github.com/FFFengMJL/homework/blob/gh-pages/lab/snake_automove.c" target="_blank">代码链接：snake_automove.c</a>，最终效果：蛇能够判断并吃屎，但是**无法判断会不会自己吃自己**
 
 4. 优化算法，伪代码如下：  
 <pre>
@@ -86,10 +83,9 @@ ENDFOR
 返回最小值 min_1 对应的方向
 </pre>
 
-5. 写出代码，如下，效果：能够自己胜利（长度达到20,并再吃一个）一次  
-<pre id="au_2"></pre>
+5. 写出代码，代码链接效果：能够自己胜利（长度达到20,并再吃一个）一次  
 
-6. 修改map字符串，使地图中加入阻碍物，效果：由于**无法预测更远**的下一步，因此会出现自己把自己**弄进死胡同**,导致GG
+6. 修改map字符串，使地图中加入阻碍物，效果：由于**无法预测更远**的下一步，因此会出现自己把自己**弄进死胡同**,导致GG，<a herf="https://github.com/FFFengMJL/homework/blob/gh-pages/lab/snake_automove_ver2.c" target="_blank">代码链接：snake_automove_ver2.c</a>
 
 <script>
 document.getElementById('ks').innerText=`
@@ -116,33 +112,6 @@ int main(void){
           tty_reset();
   return 0;
 }`
-document.getElementById('ke2').innerText=`
-int main(void){
-  int tty_set_flag;
-  tty_set_flag = tty_set();
-  int i;
-  int key;
-  char direct='s';
-  for(i=0;i<snakelen;i++){/*初始化坐标数组*/
-      snake_xy[i][0]=1;
-      snake_xy[i][1]=snakelen-i;
-  }
-  while(GG != 1){
-    if( kbhit() ) {
-      key=getchar();      
-      Snake_Move(snakelen,key);
-      Output(GG);
-    }
-    else{
-      Snake_Move(snakelen,key);
-      Output(GG);
-    }
-  }
-  if(tty_set_flag == 0) 
-          tty_reset();
-  return 0;
-}
-`
 document.getElementById('au').innerText=`
 char movable[]={'w','a','s','d'};/*走的方式，与最小值的位置对应*/
 int distance[4]={0};
