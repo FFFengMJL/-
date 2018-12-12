@@ -193,7 +193,7 @@ int HowToMove(int lowest){
       flag=1;
     }
     else if(flag){
-      min=(distance[min]>distance[i] && distance[i]>distance[lowest])?i:min;
+      min=(distance[min]>distance[i] && distance[i]>=distance[lowest] && min != lowest)?i:min;
     }
   }
   return min;
@@ -217,6 +217,8 @@ char Auto_Move(int Money_x,int Money_y){
     }
   }
   Snake_Move(snakelen,movable[min]);
+  Output(GG);
+  printf("%c\n",movable[min]);
 //  return movable[min];
 }
 
@@ -234,8 +236,7 @@ int main(void){
   Output(GG);
   while(GG != 1){
     Auto_Move(Money_x,Money_y);
-    Output(GG);
-    usleep(450000);
+    usleep(1000000);
   }
   tty_reset();
 }
