@@ -186,14 +186,20 @@ int move[4][2]={{-1,0},{0,-1},{1,0},{0,1}};
 
 /*预防自己吃自己和往回走和撞墙*/
 int HowToMove(int lowest){
-  int i,min=lowest,flag=0;
+  int i,min,flag=0;
   for(i=0;i<4;i++){
-    if(distance[i]>=distance[min] && min != i && flag == 0){
-      min=i;
-      flag=1;
+    if(flag){
+      if(distance[i]<distance[min] && distance[i]>=distance[lowest]){
+        if(i != lowest){
+          min=i;
+        }
+      }
     }
-    else if(flag){
-      min=(distance[min]>distance[i] && distance[i]>=distance[lowest] && min != lowest)?i:min;
+    else{
+      if(distance[i]>=distance[lowest] && i != lowest){
+        min=i;
+        flag=1;
+      }
     }
   }
   return min;
@@ -207,7 +213,7 @@ char Auto_Move(int Money_x,int Money_y){
   for(i=0;i<4;i++){
     min=(distance[i]<distance[min]?i:min);
   }
-  for(i=0;i<3;i++){
+  for(i=0;i<4;i++){
     char tar=map[snake_xy[0][0]+move[min][0]][snake_xy[0][1]+move[min][1]];
     if(tar == 'X' || tar == '*'){
       min=HowToMove(min);
@@ -236,7 +242,7 @@ int main(void){
   Output(GG);
   while(GG != 1){
     Auto_Move(Money_x,Money_y);
-    usleep(1000000);
+    usleep(450000);
   }
   tty_reset();
 }

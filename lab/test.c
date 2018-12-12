@@ -1,23 +1,30 @@
 #include<stdio.h>
-int distance[]={1,2,3,4};
+int distance[]={4,1,5,2};
 int HowToMove(int lowest){
-  int i,min=lowest,flag=0;
+  int i,min,flag=0;
   for(i=0;i<4;i++){
-    if(distance[i]>=distance[min] && min != i && flag == 0){
-      min=i;
-      flag=1;
+    if(flag){
+      if(distance[i]<distance[min] && distance[i]>=distance[lowest]){
+        if(i != lowest){
+          min=i;
+        }
+      }
     }
-    else if(flag){
-      min=(distance[min]>distance[i] && distance[i]>=distance[lowest] && min != lowest)?i:min;
+    else{
+      if(distance[i]>=distance[lowest] && i != lowest){
+        min=i;
+        flag=1;
+      }
     }
   }
   return min;
 }
 
 int main(){
-    int min=0;
-    for(int i=1;i<4;i++){
-        min=HowToMove(min);
-        printf("%d\t",distance[min]);
-    }
+  int min=1;
+  for(int i=1;i<4;i++){
+    min=HowToMove(min);
+    printf("%d\t",distance[min]);
+  }
+  printf("\n");
 }
