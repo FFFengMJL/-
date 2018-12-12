@@ -32,9 +32,9 @@ char map[12][12]={
   {"*         *"},
   {"*         *"},
   {"*         *"},
-  {"*         *"},
-  {"*         *"},
-  {"*         *"},
+  {"*    *    *"},
+  {"*   ***   *"},
+  {"*    *    *"},
   {"*         *"},
   {"*         *"},
   {"*         *"},
@@ -225,7 +225,6 @@ char Auto_Move(int Money_x,int Money_y){
   Snake_Move(snakelen,movable[min]);
   Output(GG);
   printf("%c\n",movable[min]);
-//  return movable[min];
 }
 
 

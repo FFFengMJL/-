@@ -52,7 +52,7 @@ printf("\033[30;47m%s\n\033[0m);
 
 ## 3. 智能（障）蛇
 
-1. 根据网页给出的伪代码：
+1. 根据网页给出的思路：
 <pre>
     // Hx,Hy: 头的位置
     // Fx,Fy：食物的位置
@@ -67,7 +67,29 @@ printf("\033[30;47m%s\n\033[0m);
 	}
 </pre>
 
-2. 
+2. 做出部分修改后，写出AutoMove()函数，代码如下：  
+<pre id="au"></pre>
+
+3. 在贪吃蛇中去除接受输入的函数，并将自动移动的算法写入，最终效果：蛇能够判断并吃屎，但是**无法判断会不会自己吃自己**
+
+4. 优化算法，伪代码如下：  
+<pre>
+分别计算蛇头周边四个位置的距离，取最小值 min_1
+FOR i FROM 0 TO 4
+  IF 蛇头按照最小值 min_1 对应的方向的前进一个的位置是'X'或者'*' THEN
+    找出除了比最小值大的数组中的最小值 min_2
+    min_1 = min_2
+  ELSE
+    BREAK
+  ENDIF
+ENDFOR
+返回最小值 min_1 对应的方向
+</pre>
+
+5. 写出代码，如下，效果：能够自己胜利（长度达到20,并再吃一个）一次  
+<pre id="au_2"></pre>
+
+6. 修改map字符串，使地图中加入阻碍物，效果：由于**无法预测更远**的下一步，因此会出现自己把自己**弄进死胡同**,导致GG
 
 <script>
 document.getElementById('ks').innerText=`
@@ -119,6 +141,75 @@ int main(void){
   if(tty_set_flag == 0) 
           tty_reset();
   return 0;
+}
+`
+document.getElementById('au').innerText=`
+char movable[]={'w','a','s','d'};/*走的方式，与最小值的位置对应*/
+int distance[4]={0};
+char Auto_Move(int Money_x,int Money_y){
+  int former_x=snake_xy[0][0];
+  int former_y=snake_xy[0][1];
+  distance[0]=abs(snake_xy[0][0]-1-Money_x)+abs(snake_xy[0][1]-Money_y);/**/
+  distance[1]=abs(snake_xy[0][0]-Money_x)+abs(snake_xy[0][1]-1-Money_y);
+  distance[2]=abs(snake_xy[0][0]+1-Money_x)+abs(snake_xy[0][1]-Money_y);
+  distance[3]=abs(snake_xy[0][0]-Money_x)+abs(snake_xy[0][1]+1-Money_y);
+  int i,t,min=0;
+  for(i=0;i<4;i++){
+    min=(distance[i]<distance[min]?i:min);
+  }
+  Snake_Move(snakelen,movable[min]);
+  if(snake_xy[0][0] == former_x && snake_xy[0][1] == former_y){
+    for(i=0,t=min,min=0;i<4;i++){
+      if(i!=t){
+        min=(distance[i]<distance[min]?i:min);
+      }
+    }
+    Snake_Move(snakelen,movable[min]);
+  }
+//  return movable[min];
+}
+`
+document.getElementById('au_2').innerText=`/*预防自己吃自己和往回走和撞墙*/
+int HowToMove(int lowest){
+  int i,min,flag=0;
+  for(i=0;i<4;i++){
+    if(flag){
+      if(distance[i]<distance[min] && distance[i]>=distance[lowest]){
+        if(i != lowest){
+          min=i;
+        }
+      }
+    }
+    else{
+      if(distance[i]>=distance[lowest] && i != lowest){
+        min=i;
+        flag=1;
+      }
+    }
+  }
+  return min;
+}
+
+char Auto_Move(int Money_x,int Money_y){
+  int i,t,min=0;
+  for(i=0;i<4;i++){
+    distance[i]=abs(snake_xy[0][0]+move[i][0]-Money_x)+abs(snake_xy[0][1]+move[i][1]-Money_y);
+  }
+  for(i=0;i<4;i++){
+    min=(distance[i]<distance[min]?i:min);
+  }
+  for(i=0;i<4;i++){
+    char tar=map[snake_xy[0][0]+move[min][0]][snake_xy[0][1]+move[min][1]];
+    if(tar == 'X' || tar == '*'){
+      min=HowToMove(min);
+    }
+    else{
+      break;
+    }
+  }
+  Snake_Move(snakelen,movable[min]);
+  Output(GG);
+  printf("%c\n",movable[min]);
 }
 `
 </script>
