@@ -38,7 +38,7 @@ e.g.object——player
 #### 3、编程
 _使用可视化工具，我们定义的游戏中的对象（数据及其表示）。编程的任务就是特定条件下，用系统提供的操作序列去改变这些对象的属性（数据）。_
 ![events](images/lab0203.png)
-运用 **CRC（Class-Responsibility-Collaboration）卡片方法** 描述游戏中的所有对象与事件。
+运用 **CRC（Class-Responsibility-Collaboration）卡片方法** 描述游戏中的所有对象与事件。  
 
 | object       | event                         | actions                  |
 |:-------------|:------------------------------|:-------------------------|
